@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BB8C4C8E-2A13-4172-ACEB-9260FA82288D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Neutralizer</RootNamespace>
+    <AssemblyName>Neutralizer</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>DesktopGL</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;LINUX</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;LINUX</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Animation.cs" />
+    <Compile Include="AnimationPlayer.cs" />
+    <Compile Include="Bullet.cs" />
+    <Compile Include="ChargeTile.cs" />
+    <Compile Include="Circle.cs" />
+    <Compile Include="EmptyTile.cs" />
+    <Compile Include="ExitTile.cs" />
+    <Compile Include="FallingTile.cs" />
+    <Compile Include="Game1.cs" />
+    <Compile Include="Level.cs" />
+    <Compile Include="PlatformerGame.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RectangleExtensions.cs" />
+    <Compile Include="Tile.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icon.ico" />
+    <EmbeddedResource Include="Icon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x86\SDL2.dll">
+      <Link>x86\SDL2.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x64\SDL2.dll">
+      <Link>x64\SDL2.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x86\soft_oal.dll">
+      <Link>x86\soft_oal.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x64\soft_oal.dll">
+      <Link>x64\soft_oal.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x86\libSDL2-2.0.so.0">
+      <Link>x86\libSDL2-2.0.so.0</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x64\libSDL2-2.0.so.0">
+      <Link>x64\libSDL2-2.0.so.0</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x86\libopenal.so.1">
+      <Link>x86\libopenal.so.1</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x64\libopenal.so.1">
+      <Link>x64\libopenal.so.1</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\libSDL2-2.0.0.dylib">
+      <Link>libSDL2-2.0.0.dylib</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\libopenal.1.dylib">
+      <Link>libopenal.1.dylib</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\MonoGame.Framework.dll.config">
+      <Link>MonoGame.Framework.dll.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="app.manifest" />
+    <None Include="Content\Fonts\chalkdust.ttf" />
+    <None Include="Content\Fonts\Hud.spritefont" />
+    <None Include="Content\Fonts\SmallFontHud.spritefont" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Backgrounds\Background.png" />
+    <Content Include="Content\Backgrounds\Layer0_0.png" />
+    <Content Include="Content\Backgrounds\Layer0_1.png" />
+    <Content Include="Content\Backgrounds\Layer0_2.png" />
+    <Content Include="Content\Backgrounds\Layer1_0.png" />
+    <Content Include="Content\Backgrounds\Layer1_1.png" />
+    <Content Include="Content\Backgrounds\Layer1_2.png" />
+    <Content Include="Content\Backgrounds\Layer2_0.png" />
+    <Content Include="Content\Backgrounds\Layer2_1.png" />
+    <Content Include="Content\Backgrounds\Layer2_2.png" />
+    <Content Include="Content\Bullet\min-bullet.png" />
+    <Content Include="Content\Bullet\plus-bullet.png" />
+    <Content Include="Content\Hints\Level0.png" />
+    <Content Include="Content\Hints\Level1.png" />
+    <Content Include="Content\Hints\Level2.png" />
+    <Content Include="Content\Hints\Level3.png" />
+    <Content Include="Content\Hints\Level4.png" />
+    <Content Include="Content\Levels\0.txt" />
+    <Content Include="Content\Levels\1.txt" />
+    <Content Include="Content\Levels\2.txt" />
+    <Content Include="Content\Levels\3.txt" />
+    <Content Include="Content\Levels\4.txt" />
+    <Content Include="Content\Levels\5.txt" />
+    <Content Include="Content\Levels\6.txt" />
+    <Content Include="Content\Levels\7.txt" />
+    <Content Include="Content\Levels\8.txt" />
+    <Content Include="Content\Levels\9.txt" />
+    <Content Include="Content\Overlays\you_died.png" />
+    <Content Include="Content\Overlays\you_lose.png" />
+    <Content Include="Content\Overlays\you_next.png" />
+    <Content Include="Content\Overlays\you_win.png" />
+    <Content Include="Content\Sounds\BGM.mp3" />
+    <Content Include="Content\Sounds\Chime.mp3" />
+    <Content Include="Content\Sounds\Chime2.mp3" />
+    <Content Include="Content\Sounds\ExitReached.mp3" />
+    <Content Include="Content\Sounds\Jump - land.mp3" />
+    <Content Include="Content\Sounds\Jump.mp3" />
+    <Content Include="Content\Sounds\PlayerFall.mp3" />
+    <Content Include="Content\Sounds\Plus-block.mp3" />
+    <Content Include="Content\Sounds\Shoot.mp3" />
+    <Content Include="Content\Splashscreen\TitleScreen.png" />
+    <Content Include="Content\Sprites\Gem.png" />
+    <Content Include="Content\Sprites\Player\bukken.png" />
+    <Content Include="Content\Sprites\Player\Celebrate.png" />
+    <Content Include="Content\Sprites\Player\Die.png" />
+    <Content Include="Content\Sprites\Player\Idle.png" />
+    <Content Include="Content\Sprites\Player\jump.png" />
+    <Content Include="Content\Sprites\Player\Walk.png" />
+    <Content Include="Content\Tiles\Deur.png" />
+    <Content Include="Content\Tiles\MinBlok.png" />
+    <Content Include="Content\Tiles\NormaalBlok.png" />
+    <Content Include="Content\Tiles\PlusBlok.png" />
+    <Content Include="Content\Tiles\Spikes.png" />
+    <Content Include="Content\Tiles\VallendBlok.png" />
+    <Content Include="Content\Tiles\VloerBlok.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
